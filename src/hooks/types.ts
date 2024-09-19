@@ -4,6 +4,7 @@ type UseTypeBaseResult<TValue> = {
   data: TValue
   loading: boolean
   invalidateData: () => void
+  isPaginated: boolean
 }
 
 type UseTypeBaseAllResult<TValue> = UseTypeBaseResult<TValue> & {
