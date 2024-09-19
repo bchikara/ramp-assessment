@@ -37,7 +37,6 @@ export function usePaginatedTransactions(): PaginatedTransactionsResult {
     data: paginatedTransactions,
     loading,
     fetchAll,
-    invalidateData,
-    isPaginated: paginatedTransactions?.nextPage !== null
+    invalidateData
   }
 }

@@ -34,7 +34,12 @@ export function useCustomFetch() {
       params?: TParams
     ): Promise<TData | null> =>
       wrappedRequest<TData>(async () => {
-        const result = await fakeFetch<TData>(endpoint, params)
+        const result = await fakeFetch<TData>(endpoint, params);
+
+        if(endpoint === "setTransactionApproval") {
+          clearCacheByEndpoint(["paginatedTransactions", "transactionsByEmployee"])
+        }
+        
         return result
       }),
     [wrappedRequest]
